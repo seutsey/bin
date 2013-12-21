@@ -1,0 +1,18 @@
+kill -9 `ps -ef | grep rackup | grep -v grep | awk '{print $2}'`
+start_redis.sh
+start_apollo.sh
+sleep 5
+tmux -S /var/tmux/pairing new-session -s pairing -n web -d
+tmux -S /var/tmux/pairing source-file /var/git/spa-configs/tmux.conf
+tmux -S /var/tmux/pairing send-keys -t pairing 'cd ~/git/spa/web' C-m
+tmux -S /var/tmux/pairing send-keys -t pairing 'bundle exec rackup -p 4567' C-m
+tmux -S /var/tmux/pairing new-window -n services -t pairing
+tmux -S /var/tmux/pairing send-keys -t pairing:2 'cd ~/git/spa/services' C-m
+tmux -S /var/tmux/pairing send-keys -t pairing:2 'foreman start -c all_services=1' C-m
+tmux -S /var/tmux/pairing rename-window -t pairing:2 services
+tmux -S /var/tmux/pairing new-window -n listener -t pairing
+tmux -S /var/tmux/pairing send-keys -t pairing:3 'cd ~/git/stompkiq/event_publisher' C-m
+tmux -S /var/tmux/pairing send-keys -t pairing:3 'foreman start -c logger=1,scanner=1' C-m
+tmux -S /var/tmux/pairing rename-window -t pairing:3 listener
+tmux -S /var/tmux/pairing select-window -t pairing:1
+tmux -S /var/tmux/pairing -2 attach -t pairing

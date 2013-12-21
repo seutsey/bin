@@ -1,0 +1,15 @@
+#! /bin/bash
+tmux -S /var/tmux/liveon send-keys -t liveon:5.2 C-c
+tmux -S /var/tmux/liveon send-keys -t liveon:5.2 'rabbitmqctl stop' C-m
+tmux -S /var/tmux/liveon send-keys -t liveon:3.1 C-c
+tmux -S /var/tmux/liveon send-keys -t liveon:3.2 C-c
+tmux -S /var/tmux/liveon send-keys -t liveon:3.3 C-c
+tmux -S /var/tmux/liveon send-keys -t liveon:3.4 C-c
+tmux -S /var/tmux/liveon send-keys -t liveon:3.5 C-c
+tmux -S /var/tmux/liveon send-keys -t liveon:4.5 'exit' C-m
+tmux -S /var/tmux/liveon send-keys -t liveon:4.4 'exit' C-m
+tmux -S /var/tmux/liveon send-keys -t liveon:4.3 'exit' C-m
+tmux -S /var/tmux/liveon send-keys -t liveon:4.2 'exit' C-m
+tmux -S /var/tmux/liveon send-keys -t liveon:4.1 'exit' C-m
+
+tmux -S /var/tmux/liveon kill-server
