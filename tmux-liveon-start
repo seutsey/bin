@@ -32,16 +32,8 @@ tmux -S /var/tmux/liveon send-keys -t liveon:3.4 'cd ~/git/onlife/liveon' C-m
 tmux -S /var/tmux/liveon send-keys -t liveon:3.4 'bundle exec rails s' C-m
 tmux -S /var/tmux/liveon send-keys -t liveon:3.5 'cd ~/git/onlife/onlife_health' C-m
 tmux -S /var/tmux/liveon send-keys -t liveon:3.5 'bundle exec rails s -p 9494' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.1 'cd ~/git/onlife/entity_service' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.1 'bundle exec rails c' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.2 'cd ~/git/onlife/assessment_service' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.2 'bundle exec rails c' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.3 'cd ~/git/onlife/platform_configuration' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.3 'bundle exec rails c' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.4 'cd ~/git/onlife/liveon' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.4 'bundle exec rails c' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.5 'cd ~/git/onlife/onlife_health' C-m
-tmux -S /var/tmux/liveon send-keys -t liveon:4.5 'bundle exec rails c' C-m
+tmux -S /var/tmux/liveon send-keys -t liveon:4 'cd ~/git'
+tmux -S /var/tmux/liveon send-keys -t liveon:4 'rails c' C-m
 tmux -S /var/tmux/liveon send-keys -t liveon:6 'cd ~/git' C-m
 tmux -S /var/tmux/liveon rename-window -t liveon:2 rspec
 tmux -S /var/tmux/liveon rename-window -t liveon:3 apps
