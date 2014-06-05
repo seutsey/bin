@@ -13,7 +13,7 @@ tmate -S /var/tmux/liveon split-window -v
 tmate -S /var/tmux/liveon new-window -n irb -t liveon
 tmate -S /var/tmux/liveon new-window -n services -t liveon
 tmate -S /var/tmux/liveon split-window -h
-tmate -S /var/tmux/liveon new-window -n console -t liveon
+tmate -S /var/tmux/liveon new-window -n guard-ngrok -t liveon
 tmate -S /var/tmux/liveon split-window -h
 tmate -S /var/tmux/liveon send-keys -t liveon:5.1 'sudo rabbitmq-server' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:5.2 'sudo mongod' C-m
