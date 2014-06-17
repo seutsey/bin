@@ -18,6 +18,8 @@ tmate -S /var/tmux/liveon split-window -h
 tmate -S /var/tmux/liveon send-keys -t liveon:5.1 'sudo rabbitmq-server' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:5.2 'sudo mongod' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:2 'cd ~/git/onlife/liveon' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:2 'rake daemon:all:restart' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:2 'clear' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:2 'tmate show-messages' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'cd ~/git/onlife/entity_service' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'bundle exec rails s -p 3002' C-m
