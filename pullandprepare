@@ -6,6 +6,11 @@ echo "_____________________________________"
 git pull
 
 echo ""
+echo "Bundling"
+echo "_____________________________________"
+bundle
+
+echo ""
 echo "Running db:migrate"
 echo "_____________________________________"
 rake db:migrate
