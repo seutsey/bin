@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo ""
+echo "pulling"
+git pull
+
+echo ""
+echo "Running db:migrate"
+rake db:migrate
+
+echo ""
+echo "Running db:test:prepare"
+rake db:test:prepare
+
+echo ""
+echo "Running deployment:run_deploy_tasks"
+rake deployment:run_deploy_tasks
