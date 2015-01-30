@@ -20,30 +20,30 @@ tmate -S /var/tmux/liveon send-keys -t liveon:5.1 'rabbitmq-server' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:5.2 'mongod' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:5.3 'cd ~/git/onlife/liveon' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:5.3 'brew service start redis' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:5.3 'clear' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:5.3 'bundle exec resque-web -p 3010 ./config/initializers/resque.rb' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:2 'cd ~/git/onlife/liveon' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:2 'rake daemon:all:restart' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:2 'clear' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:2 'tmate show-messages' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'cd ~/git/onlife/entity_service' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'git pooll' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'bundle' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'pullandprepare' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'bundle exec rails s -p 3002' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.2 'cd ~/git/onlife/assessment_service' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'git pooll' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'bundle' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:3.2 'pullandprepare' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.2 'bundle exec rails s -p 3003' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.3 'cd ~/git/onlife/platform_configuration' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'git pooll' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'bundle' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:3.3 'pullandprepare' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.3 'bundle exec rails s -p 3001' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.4 'cd ~/git/onlife/liveon' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'git pooll' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:3.1 'bundle' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:3.4 'pullandprepare' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:3.4 'bundle exec rails s' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:3.5 'cd ~/git/onlife/plyushkin-service' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:3.5 'pullandprepare' C-m
+tmate -S /var/tmux/liveon send-keys -t liveon:3.5 'rackup -p 3005' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:4 'cd ~/git/onlife' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:6.1 'cd ~/git/onlife/liveon' C-m
-tmate -S /var/tmux/liveon send-keys -t liveon:6.1 'guard start' C-m
+
 tmate -S /var/tmux/liveon send-keys -t liveon:6.2 'cd ~/git/onlife/liveon' C-m
 tmate -S /var/tmux/liveon send-keys -t liveon:6.2 'ngrok start liveon onlife' C-m
 tmate -S /var/tmux/liveon rename-window -t liveon:2 rspec
