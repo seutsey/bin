@@ -12,6 +12,9 @@ tmux split-window -h
 tmux send-keys -t maestro:2.2 'cd ~/git/maestro' C-m
 tmux send-keys -t maestro:2.2 'clear' C-m
 
+tmux send-keys -t maestro:2.1 'killall postgres' C-m
+tmux send-keys -t maestro:2.1 'rm ~/git/maestro/database/postmaster.pid' C-m
+tmux send-keys -t maestro:2.1 'clear' C-m
 tmux send-keys -t maestro:2.1 'postgres -D ~/git/maestro/database' C-m
 
 tmux new-window -t maestro:3 -n servers
