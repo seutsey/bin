@@ -11,16 +11,16 @@ echo "_____________________________________"
 bundle
 
 echo ""
+echo "Running db:create"
+echo "_____________________________________"
+rake db:create
+
+echo ""
 echo "Running db:migrate"
 echo "_____________________________________"
 rake db:migrate
 
 echo ""
-echo "Running db:test:prepare"
+echo "Running db:seed"
 echo "_____________________________________"
-rake db:test:prepare
-
-echo ""
-echo "Running deployment:run_deploy_tasks"
-echo "_____________________________________"
-rake deployment:run_deploy_tasks
+rake db:seed

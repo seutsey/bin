@@ -1,0 +1,38 @@
+#!/bin/bash
+tmate -S /tmp/tmate.sock new-session -d -s maestro
+
+tmate -S /tmp/tmate.sock new-window -t maestro:1 -n editor
+tmate -S /tmp/tmate.sock send-keys -t maestro:1 'cd ~/git/maestro' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:1 'emacs' C-m
+
+tmate -S /tmp/tmate.sock new-window -t maestro:2 -n services
+tmate -S /tmp/tmate.sock send-keys -t maestro:2 'cd ~/git/maestro' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:2 'clear' C-m
+tmate -S /tmp/tmate.sock split-window -h
+
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.2 'cd ~/git/maestro' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.2 'clear' C-m
+
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.1 'killall postgres' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.1 'rm ~/git/maestro/database/postmaster.pid' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.1 'clear' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.1 'postgres -D ~/git/maestro/database' C-m
+
+tmate -S /tmp/tmate.sock new-window -t maestro:3 -n servers
+tmate -S /tmp/tmate.sock send-keys -t maestro:3 'cd ~/git/maestro' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:3 'clear' C-m
+
+tmate -S /tmp/tmate.sock new-window -t maestro:4 -n rspec
+tmate -S /tmp/tmate.sock send-keys -t maestro:4 'cd ~/git/maestro' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:4 'clear' C-m
+
+tmate -S /tmp/tmate.sock new-window -t maestro:5 -n bash
+tmate -S /tmp/tmate.sock send-keys -t maestro:5 'cd ~/git/maestro' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:5 'clear' C-m
+
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.2 'tmate show-messages' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.2 'clear' C-m
+tmate -S /tmp/tmate.sock send-keys -t maestro:2.2 "tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'" C-m
+
+tmate -S /tmp/tmate.sock select-window -t maestro:1
+tmate -S /tmp/tmate.sock -2 attach-session -t maestro

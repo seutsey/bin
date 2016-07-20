@@ -23,11 +23,21 @@ tmux send-keys -t maestro:3 'clear' C-m
 
 tmux new-window -t maestro:4 -n rspec
 tmux send-keys -t maestro:4 'cd ~/git/maestro' C-m
-tmux send-keys -t maestro:4 'clear' C-m
+tmux end-keys -t maestro:4 'clear' C-m
 
 tmux new-window -t maestro:5 -n bash
 tmux send-keys -t maestro:5 'cd ~/git/maestro' C-m
 tmux send-keys -t maestro:5 'clear' C-m
+
+
+tmux new-window -t maestro:6 -n bash
+tmux send-keys -t maestro:6 'cd ~/git/maestro' C-m
+tmux send-keys -t maestro:6 'clear' C-m
+
+
+tmux new-window -t maestro:7 -n bash
+tmux send-keys -t maestro:7 'cd ~/git/maestro' C-m
+tmux send-keys -t maestro:7 'clear' C-m
 
 tmux select-window -t maestro:1
 tmux -2 attach-session -t maestro
