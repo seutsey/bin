@@ -1,0 +1,2 @@
+#!/bin/bash
+ssh sage@10.170.4.48
