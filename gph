@@ -1,0 +1,9 @@
+#!/bin/sh
+# Pushes the current branch to the remote server (default origin)
+branch=$(git branch 2>/dev/null | grep ^\* | sed -e s/^\*[[:space:]]// )
+[ x$1 != x ] && remote=$1 || remote=origin
+echo "git push ${remote} ${branch}"
+git push ${remote} ${branch}
+git push heroku ${branch}:master
+hash=$(git rev-parse --short ${branch})
+heroku config:set HEAD_HASH=${hash} -a project-rise
