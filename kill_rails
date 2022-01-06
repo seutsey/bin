@@ -1,3 +1,4 @@
 #!/bin/sh
-lsof -ti:3000 | xargs kill
+# lsof -ti:3000 | xargs kill
+sudo kill -9 $(sudo lsof -t -i:3000)
 echo "*** Killed Rails running on port 3000"
