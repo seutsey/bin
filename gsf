@@ -1,0 +1,2 @@
+#!/bin/sh
+git status $* | grep modified | grep -v .yml | grep -v .yaml | grep -v Docker
